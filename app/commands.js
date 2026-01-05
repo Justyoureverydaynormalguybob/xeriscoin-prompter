@@ -49,10 +49,19 @@ export const commands = {
       id: 'generate-keypair',
       keywords: ['keypair', 'key', 'generate', 'identity', 'wallet', 'create', 'pubkey'],
       title: 'Generate Validator Keypair',
-      description: 'Create your validator identity (outputs keypair.json + pubkey)',
+      description: 'Create your validator identity (outputs keypair.json)',
       command: 'cargo run --release --bin keypair_gen',
       category: 'keys',
       step: 6
+    },
+    {
+      id: 'get-address',
+      keywords: ['address', 'pubkey', 'public', 'wallet', 'show'],
+      title: 'Get Wallet Address',
+      description: 'Display your public key (wallet address) from keypair',
+      command: 'cargo run --release --bin wallet -- address keypair.json',
+      category: 'keys',
+      step: 7
     },
     {
       id: 'rename-keypair',
@@ -61,7 +70,7 @@ export const commands = {
       description: 'Rename keypair.json to miner.json for the validator',
       command: 'mv keypair.json miner.json',
       category: 'keys',
-      step: 7
+      step: 8
     },
     {
       id: 'run-validator',
@@ -70,7 +79,7 @@ export const commands = {
       description: 'Start your validator and connect to the testnet seed node',
       command: 'RUST_LOG=info cargo run --release --bin xrs-node -- --validator 138.197.116.81 miner.json ledger.dat',
       category: 'run',
-      step: 8
+      step: 9
     },
     {
       id: 'send-basic',
@@ -169,10 +178,19 @@ export const commands = {
       id: 'generate-keypair',
       keywords: ['keypair', 'key', 'generate', 'identity', 'wallet', 'create', 'pubkey'],
       title: 'Generate Validator Keypair',
-      description: 'Create your validator identity (outputs keypair.json + pubkey)',
+      description: 'Create your validator identity (outputs keypair.json)',
       command: 'cargo run --release --bin keypair_gen',
       category: 'keys',
       step: 7
+    },
+    {
+      id: 'get-address',
+      keywords: ['address', 'pubkey', 'public', 'wallet', 'show'],
+      title: 'Get Wallet Address',
+      description: 'Display your public key (wallet address) from keypair',
+      command: 'cargo run --release --bin wallet -- address keypair.json',
+      category: 'keys',
+      step: 8
     },
     {
       id: 'rename-keypair',
@@ -181,7 +199,7 @@ export const commands = {
       description: 'Rename keypair.json to miner.json for the validator',
       command: 'mv keypair.json miner.json',
       category: 'keys',
-      step: 8
+      step: 9
     },
     {
       id: 'run-validator',
@@ -190,7 +208,7 @@ export const commands = {
       description: 'Start your validator and connect to the testnet seed node',
       command: 'RUST_LOG=info cargo run --release --bin xrs-node -- --validator 138.197.116.81 miner.json ledger.dat',
       category: 'run',
-      step: 9
+      step: 10
     },
     {
       id: 'send-basic',
@@ -300,10 +318,19 @@ export const commands = {
       id: 'generate-keypair',
       keywords: ['keypair', 'key', 'generate', 'identity', 'wallet', 'create', 'pubkey'],
       title: 'Generate Validator Keypair',
-      description: 'Create your validator identity (outputs keypair.json + pubkey)',
+      description: 'Create your validator identity (outputs keypair.json)',
       command: 'cargo run --release --bin keypair_gen',
       category: 'keys',
       step: 8
+    },
+    {
+      id: 'get-address',
+      keywords: ['address', 'pubkey', 'public', 'wallet', 'show'],
+      title: 'Get Wallet Address',
+      description: 'Display your public key (wallet address) from keypair',
+      command: 'cargo run --release --bin wallet -- address keypair.json',
+      category: 'keys',
+      step: 9
     },
     {
       id: 'rename-keypair',
@@ -312,7 +339,7 @@ export const commands = {
       description: 'Rename keypair.json to miner.json for the validator',
       command: 'Rename-Item keypair.json miner.json',
       category: 'keys',
-      step: 9
+      step: 10
     },
     {
       id: 'run-validator',
@@ -321,7 +348,7 @@ export const commands = {
       description: 'Start your validator and connect to the testnet seed node',
       command: '$env:RUST_LOG="info"; cargo run --release --bin xrs-node -- --validator 138.197.116.81 miner.json ledger.dat',
       category: 'run',
-      step: 10
+      step: 11
     },
     {
       id: 'send-basic',
@@ -448,10 +475,19 @@ export const commands = {
       id: 'generate-keypair',
       keywords: ['keypair', 'key', 'generate', 'identity', 'wallet', 'create', 'pubkey'],
       title: 'Generate Validator Keypair',
-      description: 'Create your validator identity (outputs keypair.json + pubkey)',
+      description: 'Create your validator identity (outputs keypair.json)',
       command: 'cargo run --release --bin keypair_gen',
       category: 'keys',
       step: 10
+    },
+    {
+      id: 'get-address',
+      keywords: ['address', 'pubkey', 'public', 'wallet', 'show'],
+      title: 'Get Wallet Address',
+      description: 'Display your public key (wallet address) from keypair',
+      command: 'cargo run --release --bin wallet -- address keypair.json',
+      category: 'keys',
+      step: 11
     },
     {
       id: 'rename-keypair',
@@ -460,7 +496,7 @@ export const commands = {
       description: 'Rename keypair.json to miner.json for the validator',
       command: 'mv keypair.json miner.json',
       category: 'keys',
-      step: 11
+      step: 12
     },
     {
       id: 'run-validator',
@@ -469,7 +505,7 @@ export const commands = {
       description: 'Start your validator and connect to the testnet seed node',
       command: 'RUST_LOG=info cargo run --release --bin xrs-node -- --validator 138.197.116.81 miner.json ledger.dat',
       category: 'run',
-      step: 12
+      step: 13
     },
     {
       id: 'send-basic',
@@ -521,22 +557,23 @@ export const commands = {
     },
     {
       id: 'install-deps',
-      keywords: ['dependencies', 'build', 'essential', 'clang', 'git', 'openssl'],
+      keywords: ['dependencies', 'build', 'essential', 'clang', 'git', 'openssl', 'perl'],
       title: 'Install Build Dependencies',
-      description: 'Install required packages for building Rust projects',
-      command: 'pkg install -y git clang make libclang openssl pkg-config',
+      description: 'Install ALL required packages including Perl (required for OpenSSL)',
+      command: 'pkg install -y git clang make openssl pkg-config perl',
       category: 'setup',
-      step: 2
+      step: 2,
+      note: 'Perl is REQUIRED for OpenSSL compilation - do not skip it!'
     },
     {
       id: 'rust-install',
       keywords: ['install', 'rust', 'setup', 'start', 'begin', 'toolchain', 'cargo'],
-      title: 'Install Rust (Termux Package)',
-      description: 'Install Rust via Termux packages (rustup does NOT work on Android)',
+      title: '⚠️ Install Rust (Termux Method ONLY)',
+      description: 'CRITICAL: Use pkg install, NOT rustup/curl. Rustup does NOT work on Android.',
       command: 'pkg install -y rust',
       category: 'setup',
       step: 3,
-      note: 'Do NOT use rustup/curl method on Termux - it will fail. Use pkg install instead.'
+      note: '🚨 NEVER use "curl | sh" rustup method on Termux - it will BREAK your installation! Only use pkg install rust.'
     },
     {
       id: 'verify-rust',
@@ -560,11 +597,11 @@ export const commands = {
       id: 'build',
       keywords: ['build', 'compile', 'release', 'cargo', 'make'],
       title: 'Build Release Binaries',
-      description: 'Compile the testnet software (may take a while on mobile)',
+      description: 'Compile the testnet software (may take 10-30+ minutes on mobile)',
       command: 'cargo build --release',
       category: 'setup',
       step: 6,
-      note: 'This can take 10-30+ minutes on mobile. Keep Termux in foreground or use termux-wake-lock'
+      note: 'This can take 10-30+ minutes on mobile. Keep Termux in foreground or use termux-wake-lock. If build fails with OpenSSL error, ensure Perl is installed.'
     },
     {
       id: 'wake-lock',
@@ -580,10 +617,21 @@ export const commands = {
       id: 'generate-keypair',
       keywords: ['keypair', 'key', 'generate', 'identity', 'wallet', 'create', 'pubkey'],
       title: 'Generate Validator Keypair',
-      description: 'Create your validator identity (outputs keypair.json + pubkey)',
+      description: 'Create your validator identity (outputs keypair.json)',
       command: 'cargo run --release --bin keypair_gen',
       category: 'keys',
-      step: 7
+      step: 7,
+      note: 'This creates keypair.json but does NOT display your public key. Use the next command to see your wallet address.'
+    },
+    {
+      id: 'get-address',
+      keywords: ['address', 'pubkey', 'public', 'wallet', 'show', 'display'],
+      title: '📋 Get Your Wallet Address',
+      description: 'Display your public key (wallet address) - REQUIRED for airdrop!',
+      command: 'cargo run --release --bin wallet -- address keypair.json',
+      category: 'keys',
+      step: 8,
+      note: '⭐ Copy this address and send it to XerisCoin admin for your 1,000 XRS airdrop!'
     },
     {
       id: 'rename-keypair',
@@ -592,7 +640,7 @@ export const commands = {
       description: 'Rename keypair.json to miner.json for the validator',
       command: 'mv keypair.json miner.json',
       category: 'keys',
-      step: 8
+      step: 9
     },
     {
       id: 'run-validator',
@@ -601,8 +649,8 @@ export const commands = {
       description: 'Start your validator and connect to the testnet seed node',
       command: 'RUST_LOG=info cargo run --release --bin xrs-node -- --validator 138.197.116.81 miner.json ledger.dat',
       category: 'run',
-      step: 9,
-      note: 'Keep Termux in foreground or use tmux/screen for background running'
+      step: 10,
+      note: 'Keep Termux in foreground or use tmux for background running. You must have 1,000 XRS airdrop confirmed before mining blocks.'
     },
     {
       id: 'install-tmux',
@@ -642,6 +690,15 @@ export const commands = {
       step: null
     },
     {
+      id: 'check-balance',
+      keywords: ['balance', 'wallet', 'amount', 'check', 'funds'],
+      title: 'Check Wallet Balance',
+      description: 'View your current XRS balance',
+      command: 'cargo run --release --bin wallet -- balance miner.json',
+      category: 'transactions',
+      step: null
+    },
+    {
       id: 'kill-process',
       keywords: ['kill', 'stop', 'address', 'use', 'error', 'pkill', 'process'],
       title: 'Kill Stray Processes',
@@ -670,13 +727,23 @@ export const commands = {
     },
     {
       id: 'cleanup-rustup',
-      keywords: ['rustup', 'cleanup', 'remove', 'delete', 'failed', 'error', 'cargo'],
-      title: 'Cleanup Failed Rustup Install',
-      description: 'Remove broken rustup installation if you tried curl method',
-      command: 'rm -rf ~/.cargo ~/.rustup',
+      keywords: ['rustup', 'cleanup', 'remove', 'delete', 'failed', 'error', 'cargo', 'fix', 'broken'],
+      title: 'Fix Broken Rustup Installation',
+      description: 'Remove broken rustup if you accidentally tried the curl method',
+      command: 'rm -rf ~/.cargo ~/.rustup && nano ~/.bashrc',
       category: 'troubleshoot',
       step: null,
-      note: 'Run this if you previously tried rustup and it failed. Then use pkg install rust'
+      note: 'If you tried rustup/curl method and it failed: 1) Run this command, 2) Delete cargo/rustup lines from .bashrc, 3) Restart Termux, 4) Use "pkg install rust" instead'
+    },
+    {
+      id: 'fresh-install',
+      keywords: ['fresh', 'start', 'over', 'reset', 'clean', 'reinstall'],
+      title: 'Complete Fresh Install',
+      description: 'Nuclear option: remove everything and start over',
+      command: 'cd ~ && rm -rf ~/.cargo ~/.rustup xeriscointestnet && pkg uninstall rust rust-std-aarch64-linux-android && nano ~/.bashrc',
+      category: 'troubleshoot',
+      step: null,
+      note: 'Delete ALL cargo/rustup lines from .bashrc, then exit Termux completely and restart. Then follow setup steps from beginning.'
     }
   ]
 };
